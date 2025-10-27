@@ -1,4 +1,4 @@
-# Vector Notes System
+# Vector Notes
 
 A Go-based system for syncing your notes to a vector database and querying them with AI assistance. The system consists of two main components:
 
@@ -70,6 +70,7 @@ ollama serve
 Create `.env` files in both `vector-sync/` and `note-gpt/` directories:
 
 **vector-sync/.env**:
+
 ```env
 PINECONE_API_KEY=your_pinecone_api_key
 PINECONE_HOST=https://your-index-host.pinecone.io
@@ -78,6 +79,7 @@ EMBEDDING_URL=http://localhost:11434/api/embed
 ```
 
 **note-gpt/.env**:
+
 ```env
 PINECONE_API_KEY=your_pinecone_api_key
 PINECONE_HOST=https://your-index-host.pinecone.io
@@ -87,6 +89,7 @@ GEMINI_API_KEY=your_gemini_api_key
 ```
 
 Replace the placeholder values:
+
 - `your_pinecone_api_key`: Your Pinecone API key
 - `https://your-index-host.pinecone.io`: Your Pinecone index host URL
 - `/path/to/your/notes/directory`: Absolute path to your notes directory
@@ -104,6 +107,7 @@ go run main.go
 ```
 
 This will:
+
 - Build an initial tree structure of your notes
 - Start watching for file changes
 - Sync changes to Pinecone every 5 seconds
@@ -119,11 +123,13 @@ go run cmd/main.go
 ```
 
 This starts an interactive session where you can:
+
 - Ask questions about your notes
 - Get AI-generated answers with file citations
 - Maintain conversation context across queries
 
 **Example interaction**:
+
 ```
 > What are the cake ingredients?
 Based on your notes from "Cake ingredients.md", you'll need flour, sugar, eggs, butter, and baking powder.
@@ -144,12 +150,14 @@ The repository includes VS Code launch configurations. You can:
 ## Architecture
 
 ### Vector Sync Flow
+
 1. **File Watcher**: Monitors `.md` files using [`fsnotify`](vector-sync/internal/watcher.go)
 2. **Tree Structure**: Maintains file hierarchy in [`Tree`](vector-sync/internal/tree.go)
 3. **Diff Detection**: Compares client and server trees to find changes
 4. **Vector Upsert**: Embeds content and stores in Pinecone via [`Vector`](vector-sync/pkg/vector.go)
 
 ### Note GPT Flow
+
 1. **Query Processing**: Takes user input and vectorizes it
 2. **Semantic Search**: Finds top 2 relevant notes from Pinecone
 3. **Context Building**: Reads file contents and builds LLM context
@@ -182,36 +190,10 @@ The repository includes VS Code launch configurations. You can:
 │       └── gemini.go     # Gemini AI client
 ```
 
-## Troubleshooting
-
-### Common Issues
-
-1. **Embedding server not running**:
-   ```
-   Error: connection refused to localhost:11434
-   ```
-   Solution: Make sure Ollama is running with `ollama serve`
-
-2. **Pinecone authentication error**:
-   ```
-   Error: unauthorized
-   ```
-   Solution: Verify your `PINECONE_API_KEY` and `PINECONE_HOST` in `.env`
-
-3. **No relevant files found**:
-   - Ensure vector-sync has run and populated the database
-   - Check that your notes directory contains `.md` files
-   - Verify the notes directory path in `NOTES_DIR`
-
-4. **Gemini API errors**:
-   ```
-   Error: failed to generate content
-   ```
-   Solution: Verify your `GEMINI_API_KEY` is valid and active
-
 ### Logging
 
 Both services provide detailed logging:
+
 - File operations and sync status
 - Vector database operations
 - API calls and responses
