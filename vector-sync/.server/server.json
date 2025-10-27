@@ -1,0 +1,51 @@
+{
+    "/Users/ashmaster/Documents/Obsidian Vault/": {
+        "name": "/Users/ashmaster/Documents/Obsidian Vault/",
+        "hash": "6358543f5e9a296e53804a81b2512dd085d16e5a0d1c24b800367ecc6fcc05e2",
+        "Children": {
+            "Architecture/": {
+                "name": "Architecture/",
+                "hash": "6c4bbe030050dccd4755f613391e96b37aa054cfe1d56108a741bc6a5b02860b",
+                "Children": {
+                    "File Sync Architecture.md": {
+                        "name": "File Sync Architecture.md",
+                        "hash": "5fc319c0555d060449cc0c8deaf3017d917e39e3c469e264c3120376481e04c0",
+                        "Children": {}
+                    },
+                    "Omnesys Onboarding.md": {
+                        "name": "Omnesys Onboarding.md",
+                        "hash": "bc4187cdf371ad57565ad52d49b7d1ffb9b179aec138aaa61d65ff2507c5bf55",
+                        "Children": {}
+                    }
+                }
+            },
+            "Migrations/": {
+                "name": "Migrations/",
+                "hash": "6df2cd89c047dd5375dbd5e5c6f8cf86f38a95ca1b3a4e84b73c2b84a911dba9",
+                "Children": {
+                    "Omnesys Onboarding migration.md": {
+                        "name": "Omnesys Onboarding migration.md",
+                        "hash": "89e99d3f6db67f85b358b02e0e9b8b31cf55c58b3caa87abd5e3ec890ba9d77c",
+                        "Children": {}
+                    }
+                }
+            },
+            "Personal Notes/": {
+                "name": "Personal Notes/",
+                "hash": "8971c8ff39f8f7186eb63390f0565f6e6da9aaa2d6c40e82b1839aad05f522bf",
+                "Children": {
+                    "Cake ingredients.md": {
+                        "name": "Cake ingredients.md",
+                        "hash": "184df5ede81054e3d44c74ee1ada3f5cb3a4f75161c22665991b4688e772a15b",
+                        "Children": {}
+                    },
+                    "Shopping List.md": {
+                        "name": "Shopping List.md",
+                        "hash": "0afb5841d7565f291fe2e9d036a995fa095012ac25da57acf3b735c8836dd4a7",
+                        "Children": {}
+                    }
+                }
+            }
+        }
+    }
+}
