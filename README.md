@@ -26,8 +26,7 @@ A Go-based system for syncing your notes to a vector database and querying them 
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
-cd browtomation
+git clone https://github.com/ashmaster/vector-notes.git
 ```
 
 ### 2. Install Dependencies
